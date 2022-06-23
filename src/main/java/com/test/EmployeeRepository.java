@@ -43,7 +43,7 @@ public class EmployeeRepository {
             BufferedWriter writer = new BufferedWriter(new FileWriter(file));
             Gson gson = new Gson();
             for(Map.Entry<Integer, Employee> map : data.entrySet()){
-                writer.append(gson.toJson(map.getValue())+"\n");
+                writer.write(gson.toJson(map.getValue())+"\n");
             }
             writer.close();
         } catch (FileNotFoundException e) {
@@ -51,7 +51,6 @@ public class EmployeeRepository {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-
     }
 
 
